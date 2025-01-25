@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "one_slot",
+  "version": "${version}",
+  "name": "One Slot",
+  "description": "MTW에서 사용하기 위한 모드",
+  "authors": [],
+  "contact": {},
+  "license": "GPL-3.0",
+  "icon": "assets/one_slot/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.magyul.one_slot.client.One_slotClient"
+    ],
+    "main": [
+      "dev.magyul.one_slot.One_slot"
+    ]
+  },
+  "mixins": [
+    "one_slot.mixins.json",
+    {
+      "config": "one_slot.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
