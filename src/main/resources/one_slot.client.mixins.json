@@ -4,6 +4,8 @@
   "package": "dev.magyul.one_slot.mixin.client",
   "compatibilityLevel": "JAVA_17",
   "client": [
+    "InGameHudMixin",
+    "network.ClientLoginNetworkHandlerAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

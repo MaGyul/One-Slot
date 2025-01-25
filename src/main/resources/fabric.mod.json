@@ -10,11 +10,14 @@
   "icon": "assets/one_slot/icon.png",
   "environment": "*",
   "entrypoints": {
-    "client": [
-      "dev.magyul.one_slot.client.One_slotClient"
-    ],
     "main": [
-      "dev.magyul.one_slot.One_slot"
+      "dev.magyul.one_slot.OneSlot"
+    ],
+    "client": [
+      "dev.magyul.one_slot.OneSlotClient"
+    ],
+    "modmenu": [
+      "dev.magyul.one_slot.compat.modmenu.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -27,6 +30,13 @@
   "depends": {
     "fabricloader": ">=${loader_version}",
     "fabric": "*",
-    "minecraft": "${minecraft_version}"
+    "minecraft": "${minecraft_version}",
+    "cloth-config2": ">=11.1.136"
+  },
+  "accessWidener": "one_slot.accesswidener",
+  "custom": {
+    "modmenu": {
+      "parent": "mtwmod"
+    }
   }
 }

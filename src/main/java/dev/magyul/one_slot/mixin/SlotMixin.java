@@ -1,4 +1,4 @@
-package dev.magyul.one_slot.mixin.client;
+package dev.magyul.one_slot.mixin;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import dev.magyul.one_slot.OneSlot;

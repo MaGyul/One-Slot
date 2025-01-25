@@ -1,39 +1,26 @@
 package dev.magyul.one_slot.compat.cloth;
 
+import dev.magyul.one_slot.OneSlot;
 import me.shedaniel.autoconfig.ConfigData;
 import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
-import me.shedaniel.clothconfig2.api.ConfigBuilder;
-import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.text.Text;
-import org.jetbrains.annotations.Nullable;
+import me.shedaniel.cloth.clothconfig.shadowed.blue.endless.jankson.Comment;
 
-@Config(name = "one_slot")
-public class MenuIntegration implements ConfigData {
-    @ConfigEntry.Gui.EnumHandler
+@Config(name = OneSlot.MOD_ID)
+public class OneSlotConfig implements ConfigData {
+    @Comment("Game mode to use One Slot")
+    @ConfigEntry.Gui.Tooltip
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
     public SGameMode sgm = SGameMode.ALL;
 
-
-    public static ConfigBuilder getConfigBuilder() {
-        var config = ConfigBuilder.create();
-        config.setTitle(Text.translatable("title.one_slot.config"));
-
-        var entryBuilder = config.entryBuilder();
-
-        var category = config.getOrCreateCategory(Text.translatable("category.one_slot.general"));
-
-        category.addEntry(entryBuilder.startEnumSelector(Text.translatable("option.setting.gamemode"), SGameMode.class, SGameMode.ALL)
-                .setDefaultValue(SGameMode.ALL)
-                .setTooltip(Text.translatable("option.setting.gamemode.tooltip"))
-                .setEnumNameProvider(SGameMode::getTranslationName)
-                .setSaveConsumer((value) -> {
-                }).build());
-
-
-        return config;
+    public SGameMode sgm() {
+        if (ServerData.server_sgm != null) {
+            return ServerData.server_sgm;
+        }
+        return sgm;
     }
 
-    public static Screen getConfigScreen(@Nullable Screen parent) {
-        return MenuIntegration.getConfigBuilder().setParentScreen(parent).build();
+    public static class ServerData {
+        public static SGameMode server_sgm = null;
     }
 }

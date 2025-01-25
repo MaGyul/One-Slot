@@ -1,0 +1,9 @@
+{
+  "text.autoconfig.one_slot.title": "One Slot Config",
+  "gui.one_slot.cloth_config_warning.message": "You'll need to install the Cloth Config API mod to use the ingame configuration feature",
+  "gui.one_slot.cloth_config_warning.download": "Download Cloth Config API",
+  "category.one_slot.general": "General",
+  "text.autoconfig.one_slot.option.sgm": "game mode to set",
+  "text.autoconfig.one_slot.option.sgm.@Tooltip": "Select the game mode to which One Slot will be applied. ",
+  "option.setting.gamemode.all": "All"
+}
