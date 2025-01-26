@@ -3,9 +3,14 @@
   "id": "one_slot",
   "version": "${version}",
   "name": "One Slot",
-  "description": "MTW에서 사용하기 위한 모드",
-  "authors": [],
-  "contact": {},
+  "description": "Don't use inventory, use only your hands!",
+  "authors": [
+    "MaGyul"
+  ],
+  "contact": {
+    "sources": "https://github.com/MaGyul/One-Slot",
+    "issues": "https://github.com/MaGyul/One-Slot/issues"
+  },
   "license": "GPL-3.0",
   "icon": "assets/one_slot/icon.png",
   "environment": "*",
@@ -33,10 +38,5 @@
     "minecraft": "${minecraft_version}",
     "cloth-config2": ">=11.1.136"
   },
-  "accessWidener": "one_slot.accesswidener",
-  "custom": {
-    "modmenu": {
-      "parent": "mtwmod"
-    }
-  }
+  "accessWidener": "one_slot.accesswidener"
 }
